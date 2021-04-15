@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model TextArea;
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<p>HOLA soy Leo</p>
+
+<input type="button" value="OP test 1" onclick="location.href='@Url.Action("Test", "Home")'" />
+
+
+@using (Html.BeginForm("ChangeArea", "Home", FormMethod.Post))
+
+    {
+        //@Html.TextArea("Description", @Model.AreaOne, new { @class = "form-control" })
+        //@Html.TextArea("Description", @Model.AreaTwo, new { @class = "form-control" })
+
+        //<input id="Text1" type="text" value=@Model.AreaOne />
+        //<input id="Text2" type="text" value=@Model.AreaTwo class="form-control"/>
+
+        @Html.TextBoxFor(m => m.AreaOne)
+        @Html.TextBoxFor(m => m.AreaTwo)
+
+        //<div><textarea id="TextArea1" rows="2" cols="20">@Model.AreaOne</textarea></div>
+        //<div><textarea id="TextArea2" rows="2" cols="20">@Model.AreaTwo</textarea></div>
+        <input id="Submit1" type="submit" value="submit" />
+    }
+
+
+
